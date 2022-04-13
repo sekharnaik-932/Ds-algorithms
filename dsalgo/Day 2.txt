@@ -1,0 +1,216 @@
+
+Space Complexity
+Time Complexity
+
+Best case Analysis
+Average case Analysis
+Worst case Analysis - Big Oh (O)
+
+Recursion
+
+Recursive condition
+Base condition
+
+Input - 'n'
+
+while(n%2==0)
+	n=n/2
+
+if(n==1)
+	display "The number is a power of 2"
+else
+	display "The number is not a power of 2"
+
+Time complexity - O(log n)
+
+
+if(n!=0 && (n&(n-1)==0))
+	display "The number is a power of 2"
+else
+	display "The number is not a power of 2"
+
+10000
+01111 &
+00000
+
+1110
+1101 &
+1100
+
+0001
+0000 &
+0000
+
+1111
+1110 &
+1110
+
+Time complexity - O(1)
+
+11 - 1*10^1+1*10^0=10+1=11
+
+1011 - 1*2^3+0*2^2+1*2^1+1*2^0=8+0+2+1=11
+
+2  16
+2   8   0
+2   4   0
+2   2   0
+    1   0
+
+11
+ 9
+20
+
+1011
+1001
+10100=1*2^4+1*2^2=16+4=20
+
+
+-11 - 11110101
+
+00001011
+11110100
+       1
+11110101 = -11
+
+
+11110101 = -11
+00001010
+       1
+00001011 = 1*2^3+1*2^1+1*2^0=8+2+1=11
+
+00001000
+
+00010000
+
+01111111 = 2^6+2^5+2^4+2^3+2^2+2^1+2^0=127
+
+
+Shift operators
+
+Left shift operator 
+
+00001011 - 11
+
+00010110 - 22
+
+00101100 - 44
+
+n*2^i=11*2^2=44
+
+11110101 = -11
+11101010 = -22
+00010101
+       1
+00010110
+
+Right shift operator
+
+00001011 = 11
+
+00000101 = 5
+
+00000010 = 2
+
+11110101 = -11
+01111010 = 122
+
+
+Arithmetic or signed right shift
+
+11110101 = -11
+
+11111010 = -6
+00000101
+       1
+00000110 
+
+
+If logical left shift or right shift is applied, then void gets filled with 0
+If signed right shift is applied on a positive number, then void gets filled with 0
+If signed right shift is applied on a negative number, then void gets filled with 1
+
+
+Bitwise OR
+
+0 0 0
+0 1 1
+1 0 1
+1 1 1
+
+Bitwise AND
+
+0 0 0
+0 1 0
+1 0 0
+1 1 1
+
+Bitwise XOR
+
+0 0 0
+0 1 1
+1 0 1
+1 1 0
+
+Getting ith bit 
+
+n=11, i=3
+00001011
+00001000 &  1 left shift i
+00001000
+
+if((n&(1<<i))==0)
+	display "The ith bit is 0"
+else
+	display "The ith bit is 1"
+
+n=11, i=2
+00001011
+00000100 &
+00000000
+
+00001000
+
+
+Setting ith bit
+
+n=11,i=2
+
+00001011
+00000100 |
+00001111
+
+n|(1<<i)
+
+
+n=11,i=3
+
+00001011
+00001000 |
+00001011
+
+
+CLearing ith bit (Setting ith bit to 0)
+
+n=11,i=3
+
+00001011
+11110111 & ~(1<<i) 
+00000011
+
+n&(~(1<<i))
+
+
+Toggling ith bit
+
+n=11,i=3
+00001011
+00001000 XOR
+00000011
+
+n=11,i=2
+00001011
+00000100 XOR  00000100=1<<i
+00001111
+
+n XOR (1<<i)

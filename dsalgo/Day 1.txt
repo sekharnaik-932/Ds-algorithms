@@ -1,0 +1,181 @@
+
+Space complexity - amount of memory required by an algorithm
+Time complexity - amount of time required by an algorithm
+
+Time complexity
+
+Approach 1, Approach 2, Approach 3
+
+Hypothetical machine - 1 unit of time for every operation
+
+sumOfTwoNumbers(numberOne, numberTwo){
+	return numberOne+numberTwo;
+}
+
+2 operations - 2 units of time
+
+sumOfNumbers(n){             Time complexity - O(n)
+	sum=0                1
+	for(i=1;i<=n;i=i+1)  1+n+1+2n=3n+2
+		sum=sum+i    2n
+	return sum           1   
+}
+
+Total step count = 1+3n+2+2n+1=5n+4
+
+n=3
+
+i=1
+1<=3 - true
+
+i=2  - First increment
+2<=3 - true
+
+i=3  - Second increment
+3<=3 - true
+
+i=4  - Third increment
+4<=3 - false
+
+i=i+1
+
+
+17,9,24,11,55,47,92,85
+
+Searching for 55 - 5 comparisons
+Searching for 17 - 1 comparison
+Searching for 85 - 8 comparisons
+Searching for 83 - 8 comparisons
+
+Asymptotic Notations
+
+Best case analysis    - Big Omega
+Average case analysis - Big Theta 
+Worst case analysis   - Big Oh (O)
+
+Step 1: Calculate the step count - 5n+4
+Step 2: Ignore the non-dominant terms (lower order terms) - 5n
+Step 3: Drop the constants - n
+
+O(n)
+
+
+5n+4 = 5*n^1+4*n^0
+
+9*n^2+11*n^1+11
+9n^2
+n^2
+
+Step 1: 2*n^0
+Step 2: 2*n^0
+Step 3: n^0=1
+
+O(1)
+
+for(i=1;i<=n;i++){   -  O(n)
+
+}
+
+for(i=1;i<=n;i=i+3){   -  O(n)
+
+}
+
+n=12
+1,4,7,10
+
+n
+
+for(i=n;i>=1;i--) - O(n)
+
+
+for(i=1;i<=n;i++)         - O(n^2)
+	for(j=1;j<=n;j++)
+
+If there are c number of nested loops, the time complexity will be O(n^c)
+
+for(i=1;i<=n;i++)         - O(n*m)
+	for(j=1;j<=m;j++)
+
+for(i=1;i<=n;i=i*2)       - O(log n)
+
+for(i=n;i<=1;i=i/2)       - O(log n)
+
+for(i=1;i<=n;i=i*3) 
+	for(j=1;j<=n;j=j*3) 
+
+for(i=1;i<=n;i++)            - O(nlog n)
+	for(j=1;j<=n;j=j*2) 
+
+
+for(i=2;i<=n;i=i^2) - O(loglogn)
+
+swap(numberOne, numberTwo){
+	temp=numberOne
+	numberOne=numberTwo
+	numberTwo=numberOne
+}
+
+Step 1 - 3*n^0
+Step 2 - 3*n^0
+Step 3 - n^0=1
+
+O(1)
+
+Best to worst
+
+O(1) -> O(loglogn) -> O(logn) -> O(n) -> O(nlogn) -> O(n^2) -> O(n^c) -> O(e^n) -> O(n!)
+
+
+Recursion
+
+If it is possible to break the problem into smaller pieces of the original problem
+
+4!=4*3!
+3!=3*2!
+2!=2*1!
+1!=1
+
+n!=n*(n-1)!
+
+calculateFactorial(number){
+	if(number<=1)                                - base condition
+		return 1
+	return number*calculateFactorial(number-1)   - recursive condition
+}
+
+calculateFactorial(50000) - return 50000*calculateFactorial(49999)
+calculateFactorial(49999) - return 49999*calculateFactorial(49998)
+...........
+calculateFactorial(1) - return 1
+
+calculateFactorial(number){
+	factorial=1
+	for(i=number;i>=1;i--)
+		factorial=factorial*i
+	return factorial
+}
+
+calculateFactorial(50000)
+
+Method call
+
+Space is reserved on stack
+Method's arguments get copied
+Control jumps to the method
+Method gets executed
+the value has to be returned 
+Stack is rewound to its previous position
+
+Advantages of recursion
+Code becomes neat and simpler
+Some problems are inherently recursive
+
+
+Mutual recursion
+
+Method A calls Method B
+Method B calls Method A
+
+
+
+

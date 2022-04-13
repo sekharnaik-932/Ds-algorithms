@@ -1,0 +1,66 @@
+Trees
+
+A collection of nodes and edges
+
+Binary Search Tree
+
+Traversal
+
+In-Order  - Left, Root or Current, Right
+Pre-Order - Root or Current, Left, Right
+Post-Order - Left, Right, Root or Current
+
+class Node{
+	int data
+	Node left,right
+	Constructor(int value){
+		data=value
+	}
+
+
+	void insert(int valueToBeInserted){
+		if(valueToBeInserted<=data){
+			if(left==null)
+				left=Create a new node with the value as valueToBeInserted //left=new Node(valueToBeInserted)
+			else
+				left.insert(valueToBeInserted)
+			
+		}
+		else{
+			if(right==null)
+				right=Create a new node with the value as valueToBeInserted
+			else
+				right.insert(valueToBeInserted)
+
+		}
+
+	}
+
+	boolean search(int valueToBeSearched){
+		if(valueToBeSearched==data)
+			return true
+		else if(valueToBeSearched<data){
+			if(left==null)
+				return false
+			else
+				left.search(valueToBeSearched)
+		}
+		else{
+			if(right==null)
+				return false
+			else
+				right.search(valueToBeSearched)
+		}
+		
+	}
+
+
+	void displayUsingInOrder(){
+		if(left!=null)
+			left.displayUsingInOrder()
+		display data
+		if(right!=null)
+			right.displayUsingInOrder()
+	}	
+	
+}
